@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Adarsh</title>
-    <link rel="icon" type="image/x-icon" href="/user.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="icon" type="image/x-icon" href="/user.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,10 +16,23 @@
       crossorigin="anonymous"
     />
     <style>
-      .main_head{
+      body p {
         font-family: "Sofia", sans-serif;
       }
-      
+      .main_head {
+        font-family: "Sofia", sans-serif;
+        /* animation: typing 2s steps(20) infinite; */
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
       body {
         width: 100%;
         min-height: 100vh;
@@ -56,7 +72,7 @@
         border-radius: 12px;
         border-right: 3px solid #a6d0dd;
         border-left: 3px solid #a6d0dd;
-        text-align: left;
+        text-align: center;
       }
 
       @media screen and (min-width: 768px) {
@@ -118,7 +134,7 @@
         margin-bottom: 20px;
         width: 100%;
         border-top: none;
-        border-bottom: 2px solid #EBD8B2;
+        border-bottom: 2px solid #ebd8b2;
         border-radius: 5px;
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
       }
@@ -183,9 +199,6 @@
       .box {
         text-align: center;
       }
-
-      
-  
     </style>
   </head>
   <body>
@@ -233,18 +246,24 @@
         <div class="col-lg-6 col-12 text-center img-div">
           <img src="/5643241.jpg" width="200px" alt="your-image-description" />
         </div>
-        <div class="col-lg-6 col-12" id="intro" style="font-size: 2em">
-         <p class="main_head" style="font-family: Sofia, sans-serif;" >Hii, I am adarsh.</p> 
+        <div
+          class="col-lg-6 col-12 text-center"
+          id="intro"
+          style="font-size: 2em"
+        >
+          <p class="main_head" style="font-family: Sofia, sans-serif">
+            Hii, I am adarsh.
+          </p>
         </div>
       </div>
 
       <div class="container skills text-center">
         <h3 class="other_headings" id="1">About</h3>
       </div>
-      <div class="container skills text-center headings" >
+      <div class="container skills text-center headings">
         <!-- <h3 class=""></h3> -->
         <div class="container content">
-          <p style="font-size: 1.4em;" >
+          <p style="font-size: 1.4em">
             I am SDE Intern at Cogno AI and currently working on scalable
             analytics platform.
           </p>
@@ -327,7 +346,7 @@
       </div>
 
       <div class="container skills text-center">
-        <h3 class="other_headings">Follow me on</h3>
+        <!-- <h3 class="other_headings">Follow me on</h3> -->
         <div>
           <a href="https://www.facebook.com/adarsh1722" target="_blank"
             ><img class="social-media" src="/facebook.png" alt=""
@@ -347,22 +366,23 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const intro = document.getElementById("intro");
-      const text = intro.innerText;
-      let index = 0;
-      let backspace = false;
+    const intro = document.getElementById("intro");
+const text = intro.querySelector('.main_head').innerText;
+let index = 0;
+let backspace = false;
 
-      setInterval(() => {
-        intro.innerText = text.slice(0, index) + (backspace ? "|" : " ");
+setInterval(() => {
+  intro.querySelector('.main_head').innerHTML = text.slice(0, index) + (backspace ? "|" : " ");
+  
+  if (backspace) {
+    index--;
+    if (index === 0) backspace = false;
+  } else {
+    index++;
+    if (index === text.length + 1) backspace = true;
+  }
+}, 200);
 
-        if (backspace) {
-          index--;
-          if (index === 0) backspace = false;
-        } else {
-          index++;
-          if (index === text.length + 1) backspace = true;
-        }
-      }, 200);
     </script>
   </body>
 </html>
