@@ -196,3 +196,70 @@ p {
 .positions {
     font-family: 'Ysabeau', sans-serif;
 }
+
+.skills-icon {
+    font-size: 50px;
+}
+
+.skills-card {
+    border: 1px solid black;
+    padding: 5px 1px;
+    box-shadow: 0px 3px 12px 0px #ccc;
+    height: fit-content;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 4px;
+    /* width: 50px; */
+}
+
+.skills-icon {
+    display: inline-block;
+    /* Add any other necessary styles for the icon */
+
+    /* Set the initial position of the icon */
+    position: relative;
+    left: 0;
+    top: 0;
+
+    /* Add the animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills-card:hover .skills-icon {
+    /* Apply the shaking effect on hover */
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Define the shaking animation */
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        transform: translate(-2px, -2px);
+    }
+
+    80% {
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.shadow{
+    box-shadow: 0px 3px 12px 0px #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: fit-content
+}
